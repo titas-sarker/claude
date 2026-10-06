@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Titas Sarker</title>
+  <meta name="description" content="Personal home page of Titas Sarker.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f5f0;
+      --surface: #ffffff;
+      --text: #1c1b19;
+      --muted: #6b675f;
+      --line: #e4e0d6;
+      --accent: #c2410c;
+      --accent-soft: #fdeee4;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #141311;
+        --surface: #1d1c19;
+        --text: #f1eee7;
+        --muted: #a29d92;
+        --line: #2f2d28;
+        --accent: #fb923c;
+        --accent-soft: #2a1d13;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #141311;
+      --surface: #1d1c19;
+      --text: #f1eee7;
+      --muted: #a29d92;
+      --line: #2f2d28;
+      --accent: #fb923c;
+      --accent-soft: #2a1d13;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.65 Inter, system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+
+    header.nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 24px 0;
+    }
+    .logo { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 20px; text-decoration: none; }
+    .nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; font-size: 14px; }
+    .nav a { text-decoration: none; color: var(--muted); }
+    .nav a:hover { color: var(--text); }
+
+    .hero { padding: 72px 0 56px; }
+    .hero .eyebrow {
+      display: inline-block; font-size: 13px; font-weight: 500;
+      color: var(--accent); background: var(--accent-soft);
+      padding: 4px 10px; border-radius: 999px; margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: Fraunces, Georgia, serif; font-weight: 600;
+      font-size: clamp(40px, 8vw, 64px); line-height: 1.05; margin: 0 0 20px;
+      letter-spacing: -0.02em;
+    }
+    .hero p { font-size: 19px; color: var(--muted); max-width: 560px; margin: 0 0 28px; }
+    .avatar {
+      width: 88px; height: 88px; border-radius: 50%;
+      border: 3px solid var(--surface); box-shadow: 0 0 0 1px var(--line);
+      margin-bottom: 24px; display: block;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 18px; border-radius: 10px; font-weight: 500; font-size: 15px;
+      text-decoration: none; border: 1px solid var(--line); background: var(--surface);
+    }
+    .btn.primary { background: var(--text); color: var(--bg); border-color: var(--text); }
+    .btn:hover { transform: translateY(-1px); }
+
+    section { padding: 48px 0; border-top: 1px solid var(--line); }
+    section h2 {
+      font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 28px;
+      margin: 0 0 20px;
+    }
+    .placeholder { color: var(--muted); font-style: italic; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+    .card {
+      background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+      padding: 20px; text-decoration: none; display: block;
+      transition: border-color .15s, transform .15s;
+    }
+    a.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .card h3 { margin: 0 0 6px; font-size: 17px; }
+    .card p { margin: 0; color: var(--muted); font-size: 14px; }
+    .tag { font-size: 12px; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: .06em; }
+
+    .skills { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; }
+    .skills li {
+      padding: 6px 12px; border-radius: 999px; background: var(--surface);
+      border: 1px solid var(--line); font-size: 14px;
+    }
+
+    footer { padding: 40px 0 56px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); }
+
+    @media (max-width: 520px) {
+      .nav ul { gap: 14px; }
+      .hero { padding: 40px 0 40px; }
+      .hero p { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="nav">
+      <a class="logo" href="#">Titas Sarker</a>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="hero">
+        <img class="avatar" src="https://avatars.githubusercontent.com/u/326427800?v=4" alt="Titas Sarker">
+        <span class="eyebrow">👋 Welcome</span>
+        <h1>Hi, I'm Titas Sarker.</h1>
+        <!-- EDIT: replace with your own one-line intro -->
+        <p>I build things on the web and share what I learn along the way. This is my corner of the internet.</p>
+        <div class="actions">
+          <a class="btn primary" href="https://github.com/titas-sarker">GitHub ↗</a>
+          <a class="btn" href="#contact">Get in touch</a>
+        </div>
+      </div>
+
+      <section id="about">
+        <h2>About</h2>
+        <!-- EDIT: write a few sentences about yourself -->
+        <p class="placeholder">Add a short bio here: where you're based, what you study or work on, and what you're curious about.</p>
+        <ul class="skills" aria-label="Interests">
+          <!-- EDIT: list your skills or interests -->
+          <li>Web development</li>
+          <li>Open source</li>
+          <li>Learning in public</li>
+        </ul>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="grid">
+          <a class="card" href="https://github.com/titas-sarker/claude">
+            <span class="tag">Repository</span>
+            <h3>titas-sarker/claude</h3>
+            <p>The source of this home page.</p>
+          </a>
+          <!-- EDIT: add more project cards like the one above -->
+          <div class="card">
+            <span class="tag">Coming soon</span>
+            <h3>Your next project</h3>
+            <p class="placeholder">Describe a project you're proud of.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>Find me on GitHub at <a href="https://github.com/titas-sarker">@titas-sarker</a>.</p>
+        <!-- EDIT: add email, LinkedIn, etc. if you want them public -->
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Titas Sarker
+    </footer>
+  </div>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
